@@ -6,8 +6,11 @@ import dotenv from "dotenv"
 import helmet from "helmet";
 import morgan from "morgan";
 import kpiRoutes from "./routes/kpi.js"
+import productRoutes from "./routes/product.js"
 import KPI_Model from "./models/KPI_Model.js";
-import {kpis} from "./data/data.js"
+import {kpis,products} from "./data/data.js"
+import Product from "./models/Product.js";
+
 
 
 /**configure server */
@@ -23,6 +26,7 @@ app.use(cors());
 
 /**routes */
 app.use("/kpi", kpiRoutes);
+app.use("/product", productRoutes);;
 
 /** set up mongoose */
 
@@ -33,6 +37,7 @@ mongoose.connect(process.env.MONGO_URL, {
     .then(async() => {
         app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
         // await mongoose.connection.db.dropDatabase();// Don't do this in production, just for testing purposes
-        // KPI_Model.insertMany(kpis);//Initialize the data.
+         // KPI_Model.insertMany(kpis);//Initialize the data.
+        //  Product.insertMany(products);//Initialize the data.
     })
     .catch((error) => console.log(`${error} didn't connect!`));
