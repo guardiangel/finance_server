@@ -41,8 +41,8 @@ mongoose.connect(process.env.MONGO_URL, {
     .then(async() => {
         app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
         // await mongoose.connection.db.dropDatabase();// Don't do this in production, just for testing purposes
-         // KPI_Model.insertMany(kpis);//Initialize the data.
-        //  Product.insertMany(products);//Initialize the data.
-        //   Transaction.insertMany(transactions);//Initialize the data.
+        // KPI_Model.insertMany(kpis);//Initialize the data.
+        // Product.insertMany(products);//Initialize the data.
+        // Transaction.insertMany(transactions);//Initialize the data.
     })
     .catch((error) => console.log(`${error} didn't connect!`));
