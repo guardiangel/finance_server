@@ -69,7 +69,7 @@ const KPISchema = new Schema(
             currency:"USD",
             get:v=>v/100
         },
-        expenseByCategory:{
+        expensesByCategory:{
             type:Map,
             of:{
                 type:mongoose.Types.Currency,
@@ -78,7 +78,7 @@ const KPISchema = new Schema(
             }
         },
         monthlyData:[monthSchema],
-        daylyData:[dailySchema],
+        dailyData:[dailySchema],
     },
     {timestamps:true,toJSON:{getters:true}}
 );

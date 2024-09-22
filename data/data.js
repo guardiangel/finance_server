@@ -90,6 +90,7 @@ export const kpis = [
           nonOperationalExpenses: "$4106.79",
         },
       ],
+     
       dailyData: [
         { date: "2022-01-02", revenue: "$1498.94", expenses: "$430.64" },
         { date: "2022-01-03", revenue: "$935.08", expenses: "$329.32" },
@@ -460,7 +461,7 @@ export const kpis = [
       expensesByCategory: {
         salaries: "$38000.00",
         supplies: "$13000.00",
-        services: "$10000.00",
+        services: "$10000.00"
       },
     },
   ];
